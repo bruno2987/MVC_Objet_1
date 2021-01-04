@@ -7,19 +7,28 @@
 </head>
 <body>
 
+<form action="cours.php" method='POST'>
+    <label for='nom'>Nom d'utilisateur</label>
+    <input type='text' name='nom'><br>
+    <label for='pass'>Mot de passe</label>
+    <input type='text' name='pass'><br>
+    <input type='submit' value='Envoyer'>
+</form>
+
+
 <?php
-require 'classes/utilisateur.class.php';      // on charge
+require 'classes/utilisateur.class.php';      // on charge le programme utilisateur.class.php
 
-$pierre= new Utilisateur();
-$mathilde= new Utilisateur();
+/*
+$pierre= new Utilisateur('Pierre','1234');
+$mathilde= new Utilisateur('Mathilde','1234');
+*/
 
-$pierre->setNom('Pierre');
-$pierre->setPass('1234');
+$pierre = new Utilisateur($_POST['nom'],$_POST['pass']);
 
-$mathilde->setNom('Mathilde');
-$mathilde->setPass('1234');
 
-echo $pierre->getNom();
+echo $pierre->getNom().'<br>';
+//echo $mathilde->getNom().'<br>';
 
 ?>
     
