@@ -11,6 +11,15 @@
 require 'classes/utilisateur.class.php';      // on charge
 
 $pierre= new Utilisateur();
+$mathilde= new Utilisateur();
+
+$pierre->setNom('Pierre');
+$pierre->setPass('1234');
+
+$mathilde->setNom('Mathilde');
+$mathilde->setPass('1234');
+
+echo $pierre->getNom();
 
 ?>
     
